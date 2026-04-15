@@ -31,3 +31,6 @@
     font-style 控制字体样式，正常normal，斜体italic
     line-height 控制行高 数字+px为直接设置 只用数字代表几倍行距
     font-family 控制字体族 */
+    /* font复合属性，可以全部写在一行里面 */
+    /* text-indent 控制首行缩进 */
+    /* text-align 控制文本对齐方式 */
