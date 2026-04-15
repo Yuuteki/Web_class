@@ -1,0 +1,19 @@
+.red {
+    color:red;
+}
+
+#green {
+    color:green;
+}
+
+.redbox100px {
+    width:100px;
+    height:100px;
+    background-color:red;
+}
+
+.orangebox200px {
+    width:200px;
+    height:200px;
+    background-color:orange;
+}
