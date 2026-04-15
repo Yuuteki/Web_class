@@ -34,3 +34,13 @@
     /* font复合属性，可以全部写在一行里面 */
     /* text-indent 控制首行缩进 */
     /* text-align 控制文本对齐方式  left,center right */
+
+.center {
+    text-align: center;
+}
+
+    /* text-decoration 控制文本装饰 none无 underline下划线  */
+a {
+    /* 去掉所有超链接的下划线 */
+    text-decoration: none;
+}
