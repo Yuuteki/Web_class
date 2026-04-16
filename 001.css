@@ -41,6 +41,15 @@
 
     /* text-decoration 控制文本装饰 none无 underline下划线  */
 a {
-    /* 去掉所有超链接的下划线 */
+    /* 去掉所有超链接的下划线  */
     text-decoration: none;
+}
+
+    /* 父标签 子标签：后代选择器 */
+div span {
+    color:blue;
+}
+    /* 父标签>子标签：子代选择器 */
+div > span {
+    color:red;
 }
