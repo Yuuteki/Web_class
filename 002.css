@@ -1,3 +1,7 @@
+。center {
+    text-align: center;
+}
+
 a {
     /* 去掉所有超链接的下划线  */
     text-decoration: none;
@@ -21,3 +25,20 @@ a:hover {
 
 /* 继承 */
 /* 子类默认继承父类的文字选择样式 */
+/* 一般会把默认属性写进body里面 */
+body {
+    font: 16px/1.5 "微软雅黑", sans-serif;
+    color: #666;
+}
+
+/* 背景图片相关 */
+.bgpic {
+    width: 300px;
+    height: 200px;
+    background-color: pink;
+    background-image: url("./image/IMG_6169.GIF");
+    /* 这是缩放，cover表示平铺，contain表示包含。也可以使用倍数或像素 */
+    background-size: cover;
+    /* 表示位置，可使用像素或关键字 */
+    background-position: center;
+}
