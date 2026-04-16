@@ -42,3 +42,8 @@ body {
     /* 表示位置，可使用像素或关键字 */
     background-position: center;
 }
+
+/* 固定背景图以显示出高级效果 */
+.bgpic {
+    background-attachment: fixed;
+}
