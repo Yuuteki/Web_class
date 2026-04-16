@@ -33,7 +33,7 @@ body {
 
 /* 背景图片相关 */
 .bgpic {
-    width: 300px;
+    /* width: 300px; */
     height: 200px;
     background-color: pink;
     background-image: url("./image/IMG_6169.GIF");
@@ -46,4 +46,17 @@ body {
 /* 固定背景图以显示出高级效果 */
 .bgpic {
     background-attachment: fixed;
+}
+
+.exampleblock {
+    width: 200px;
+    height: 80px;
+    background-color: #3064bb;
+    font-size: 18px;
+    line-height: 80px;
+    color: white;
+    text-align: center;
+}
+.exampleblock:hover {
+    background-color: #608dd9;
 }
