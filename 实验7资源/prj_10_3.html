@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>统计英文字母出现的频次</title>
+    <style>
+        body {
+            margin: 0;
+            padding-top: 38px;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .container {
+            width: 750px;
+            margin: 0 auto;
+            padding: 28px 0;
+            border: 1px solid #8ba0b7;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 28px;
+            font-size: 30px;
+        }
+
+        h2 {
+            margin: 38px 0 30px;
+            font-size: 26px;
+        }
+
+        .input-label {
+            margin-bottom: 8px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .text-input {
+            width: 535px;
+            height: 40px;
+            padding: 4px 6px;
+            box-sizing: border-box;
+            font-size: 22px;
+        }
+
+        .actions {
+            margin-top: 14px;
+        }
+
+        .actions input {
+            margin: 0 8px;
+            padding: 6px 12px;
+            font-size: 20px;
+        }
+
+        .result {
+            width: 425px;
+            height: 100px;
+            padding: 8px;
+            box-sizing: border-box;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 18px;
+            line-height: 1.45;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>统计英文字母出现的频次</h1>
+        <form id="letter-form" action="#" method="post">
+            <div class="input-label">输入字符串：</div>
+            <input class="text-input" type="text" name="sentence" value="This is an example.">
+            <div class="actions">
+                <input type="submit" name="submit_btn" value="统计字母出现的频次">
+                <input type="reset" name="reset_btn" value="清空">
+            </div>
+            <h2>英文字母出现的频次统计结果</h2>
+            <textarea class="result" name="result" value="" readonly></textarea>
+        </form>
+    </div>
+
+    <script>
+        function isEnglishSentence(text) {
+            return /[a-zA-Z]/.test(text) && /^[a-zA-Z\s.,!?;:'"()-]+$/.test(text);
+        }
+
+        function countLetters(text) {
+            var counts = {};
+            var letters = text.toLowerCase().replace(/[^a-z]/g, "");
+
+            for (var i = 0; i < letters.length; i++) {
+                var letter = letters.charAt(i);
+                counts[letter] = counts[letter] ? counts[letter] + 1 : 1;
+            }
+
+            return counts;
+        }
+
+        function formatCounts(counts) {
+            var output = [];
+
+            for (var code = 97; code <= 122; code++) {
+                var letter = String.fromCharCode(code);
+
+                if (counts[letter]) {
+                    output.push(letter + ":" + counts[letter]);
+                }
+            }
+
+            return output.join("   ");
+        }
+
+        document.getElementById("letter-form").onsubmit = function () {
+            var sentence = document.getElementsByName("sentence")[0].value;
+            var result = document.getElementsByName("result")[0];
+
+            if (!isEnglishSentence(sentence)) {
+                alert("请输入只包含英文单词的句子！");
+                result.value = "";
+                return false;
+            }
+
+            result.value = formatCounts(countLetters(sentence));
+            return false;
+        };
+
+        document.getElementById("letter-form").onreset = function () {
+            document.getElementsByName("result")[0].value = "";
+        };
+    </script>
+</body>
+</html>

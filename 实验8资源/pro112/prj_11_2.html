@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标动作捕获与响应</title>
+    <style>
+        body {
+            margin: 0;
+            padding-top: 72px;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .stage {
+            width: 350px;
+            margin: 0 auto;
+            padding-bottom: 18px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .state-default,
+        .state-click {
+            background-color: #08c7a5;
+        }
+
+        .state-hover {
+            background-color: #98ce68;
+        }
+
+        .state-dblclick {
+            background-color: #a6cafa;
+        }
+
+        h2 {
+            margin: 0;
+            padding: 13px 0;
+            border-bottom: 1px solid #e7fff8;
+            font-size: 16px;
+        }
+
+        .message {
+            width: 125px;
+            height: 18px;
+            margin: 7px 0 14px;
+            box-sizing: border-box;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .picture {
+            display: block;
+            width: 150px;
+            height: 105px;
+            margin: 0 auto;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="stage state-default" id="stage">
+        <h2>鼠标动作捕获与响应</h2>
+        <input class="message" id="message" type="text" name="message" value="" readonly>
+        <img class="picture" id="picture" src="image21.jpg" alt="鼠标动作响应图片">
+    </div>
+    <script src="prj_11_2.js"></script>
+</body>
+</html>
