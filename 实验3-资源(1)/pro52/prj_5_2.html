@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Web前端开发技术课程网</title>
+    <link rel="stylesheet" href="link-5-2.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="bd-link">
+                <a href="#"><img class="bd-link1" src="fanya-logo.jpg" alt="泛雅平台"></a>
+                <a href="#"><img class="bd-link2" src="xueying-logo.jpg" alt="学银在线"></a>
+            </div>
+            <div id="nav">
+                <div class="navmenu">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li>
+                            <a href="#">HTML基础<span class="rotate">◇</span></a>
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="#">HTML概述</a></li>
+                                    <li><a href="#">常用标签</a></li>
+                                    <li><a href="#">表格表单</a></li>
+                                    <li><a href="#">网页结构</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">CSS<span class="rotate">◇</span></a>
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="#">CSS基础</a></li>
+                                    <li><a href="#">盒模型</a></li>
+                                    <li><a href="#">页面布局</a></li>
+                                    <li><a href="#">响应式</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">JavaScript<span class="rotate">◇</span></a>
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="#">语法基础</a></li>
+                                    <li><a href="#">函数对象</a></li>
+                                    <li><a href="#">DOM操作</a></li>
+                                    <li><a href="#">事件处理</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">HTML5&amp;CSS3基础<span class="rotate">◇</span></a>
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="#">HTML5基础</a></li>
+                                    <li><a href="#">CSS3基础</a></li>
+                                    <li><a href="#">CSS3过渡</a></li>
+                                    <li><a href="#">CSS3动画</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">HTML5高级应用<span class="rotate">◇</span></a>
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="#">Canvas绘图</a></li>
+                                    <li><a href="#">音视频</a></li>
+                                    <li><a href="#">本地存储</a></li>
+                                    <li><a href="#">综合案例</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div id="title">《Web前端开发技术》教材获中国大学出版社图书奖优秀教材奖</div>
+            <div class="content">
+                <div id="left">
+                    <img src="book3.jpg" alt="Web前端开发技术教材">
+                </div>
+                <div id="right">
+                    <h2>网络教学平台</h2>
+                    <ul class="platform">
+                        <li>泛雅平台</li>
+                        <li>学银在线</li>
+                        <li>文泉课堂</li>
+                    </ul>
+                    <h2>课程资源</h2>
+                    <ul class="resource">
+                        <li>新形态教材</li>
+                        <li>教学大纲</li>
+                        <li>教学PPT</li>
+                        <li>教学视频</li>
+                        <li>实训视频</li>
+                        <li>习题与答案</li>
+                        <li>试卷库</li>
+                        <li>习题作业库</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="footer">Web前端开发技术联盟，Copyright ©2020-2025 版权所有。</div>
+        </div>
+    </div>
+    <script>
+        var nav = document.getElementById("nav");
+        var menuItems = document.querySelectorAll(".navmenu > ul > li");
+
+        for (var i = 0; i < menuItems.length; i++) {
+            if (menuItems[i].querySelector(".submenu")) {
+                menuItems[i].onmouseover = function () {
+                    nav.className = "open";
+                };
+                menuItems[i].onmouseout = function () {
+                    nav.className = "";
+                };
+            }
+        }
+    </script>
+</body>
+</html>

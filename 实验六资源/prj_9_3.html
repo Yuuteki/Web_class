@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>国债认购</title>
+    <style>
+        body {
+            margin: 0;
+            padding-top: 45px;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+
+        fieldset {
+            width: 680px;
+            margin: 0 auto;
+            padding: 55px 35px 30px;
+            border: 1px solid #666;
+        }
+
+        legend {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .intro {
+            margin: 0 0 24px;
+            text-indent: 2em;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        .form-row {
+            margin: 8px 0;
+            font-size: 18px;
+        }
+
+        .amount-input {
+            width: 225px;
+            height: 28px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        .actions {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .actions input {
+            margin: 0 4px;
+            padding: 4px 9px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <form id="bond-form" action="#" method="post" novalidate>
+        <fieldset>
+            <legend>国债认购</legend>
+            <p class="intro">
+                购买国债就是认购国家借的债，即国家债券。它是国家为筹措资金而向投资者出具的书面借款凭证，承诺在一定的时期内按约定的条件，按期支付利息和到期归还本金。
+            </p>
+            <div class="form-row">
+                国债期限：
+                <label><input type="radio" name="term" value="一年，3.0%" checked>一年，3.0%</label>
+                <label><input type="radio" name="term" value="二年，3.35%">二年，3.35%</label>
+                <label><input type="radio" name="term" value="三年，3.75%">三年，3.75%</label>
+                <label><input type="radio" name="term" value="五年，4.20%">五年，4.20%</label>
+            </div>
+            <div class="form-row">
+                <label>
+                    认购金额：
+                    <input class="amount-input" type="number" name="amount" value="10000" min="10000" step="1000">
+                </label>
+            </div>
+            <div class="actions">
+                <input type="submit" name="submit_btn" value="提交">
+                <input type="reset" name="reset_btn" value="重置">
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        function getSelectedTerm() {
+            var terms = document.getElementsByName("term");
+
+            for (var i = 0; i < terms.length; i++) {
+                if (terms[i].checked) {
+                    return terms[i].value;
+                }
+            }
+
+            return "";
+        }
+
+        function makeCode() {
+            return String(Math.floor(Math.random() * 900000) + 100000);
+        }
+
+        document.getElementById("bond-form").onsubmit = function () {
+            var amountInput = document.getElementsByName("amount")[0];
+            var amount = Number(amountInput.value);
+
+            if (!amountInput.value) {
+                alert("请输入认购金额！");
+                amountInput.focus();
+                return false;
+            }
+
+            if (amount < 10000) {
+                alert("认购金额不能低于10000！");
+                amountInput.focus();
+                return false;
+            }
+
+            if (confirm("确认吗？")) {
+                var code = makeCode();
+                var inputCode = prompt("请输入交易验证码" + code);
+
+                if (inputCode === code) {
+                    alert("认购金额：" + amount + "\n国债期限利率：" + getSelectedTerm() + "\n交易成功！");
+                } else {
+                    alert("交易验证码错误，退出！");
+                }
+            }
+
+            return false;
+        };
+    </script>
+</body>
+</html>

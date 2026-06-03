@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>简易电子政务网</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .page-container {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "nav nav"
+                "sidebar content"
+                "footer footer";
+            grid-template-columns: 120px 681px;
+            grid-template-rows: 175px 43px 265px 89px;
+            width: 801px;
+            margin: 0 auto;
+        }
+
+        .header {
+            grid-area: header;
+            height: 175px;
+            background: url("logo.jpg") no-repeat center top;
+            background-size: 801px 175px;
+        }
+
+        .nav-top {
+            grid-area: nav;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            height: 43px;
+            background-color: #66629b;
+        }
+
+        .nav-top a,
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-top a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            border-bottom: 3px solid transparent;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .nav-top a:hover {
+            background-color: #817cb5;
+            border-bottom-color: #fff;
+        }
+
+        .nav-top a span {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .nav-top a:hover span {
+            transform: rotate(-360deg);
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            display: grid;
+            grid-template-rows: repeat(4, 55px);
+            background-color: #66629b;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            border-bottom: 3px solid transparent;
+            box-sizing: border-box;
+        }
+
+        .sidebar a:hover {
+            background-color: #575286;
+            border-bottom-color: #fff;
+        }
+
+        .content {
+            grid-area: content;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 13px 25px 10px;
+            border-right: 1px solid #b5b5b5;
+            border-bottom: 1px solid #b5b5b5;
+        }
+
+        .news-item h2 {
+            margin: 0 0 8px;
+            color: red;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .news-item p {
+            margin: 0;
+            text-indent: 2em;
+            font-size: 15px;
+            line-height: 1.55;
+            text-align: left;
+        }
+
+        .footer {
+            grid-area: footer;
+            padding: 6px 0 12px;
+            border-top: 1px solid #b5b5b5;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.45;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <header class="header"></header>
+        <nav class="nav-top">
+            <a href="#"><span>新闻资讯</span></a>
+            <a href="#"><span>领导讲话</span></a>
+            <a href="#"><span>行政公文</span></a>
+            <a href="#"><span>成果展示</span></a>
+            <a href="#"><span>中国教育网</span></a>
+            <a href="#"><span>教育信息网</span></a>
+        </nav>
+        <aside class="sidebar">
+            <a href="#">新闻资讯</a>
+            <a href="#">行政公文</a>
+            <a href="#">领导讲话</a>
+            <a href="#">成果展示</a>
+        </aside>
+        <main class="content">
+            <div class="news-item">
+                <h2>全省教育电子政务工作座谈会在宁召开</h2>
+                <p>
+                    为进一步统一思想、提高认识、振奋精神、明确方向，3月14日，全省教育电子政务工作座谈会在宁召开，来自13个省辖市、3个省管县（市、区）教育门户网站维护保障单位负责人参加了会议，各地就教育电子政务工作开展的情况作了交流，对全省教育门户网站绩效考核指标体系、江苏教育网《视频新闻》栏目筹建和通联站建设管理方案进行深入的研讨。
+                </p>
+            </div>
+            <div class="news-item">
+                <h2>国务院：运用大数据提高政府服务水平</h2>
+                <p>
+                    近日，国务院办公厅印发《关于运用大数据加强对市场主体服务和监管的若干意见》（以下简称《意见》）。《意见》要求，以社会信用体系建设和政府信息公开、数据开放为抓手，充分运用大数据、云计算等现代信息技术，提高政府服务水平，加强事中事后监管，维护市场正常秩序，促进市场公平竞争，释放市场主体活力，进一步优化发展环境。
+                </p>
+            </div>
+        </main>
+        <footer class="footer">
+            <div>简易电子政务中心 ©版权所有</div>
+            <div>地址：太空市南京南路280号 联系电话：99-99999999</div>
+            <div>苏ICP备：20220116002</div>
+        </footer>
+    </div>
+</body>
+</html>

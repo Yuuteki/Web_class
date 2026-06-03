@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Areas 示例</title>
+    <style>
+        div>div {
+            font-size: 32px;
+            color: white;
+			text-align:center;
+			border: 1px sold white;
+			background-color: #7c4bd8;
+        }
+        .container {
+            display: grid;
+            /* 定义区域模板 */
+            grid-template-areas:
+                'header header'
+                'main sideber'
+                'footer footer';
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: 150px 600px 100px;
+            gap: 5px; /* 格子间的间距 */
+        }
+        /* 给每个区域命名并设置样式 */
+        .item1 {
+            grid-area: header;
+        }
+        .item2 {
+            grid-area: main;
+        }
+        .item3 {
+            grid-area: sideber;
+        }
+        .item4 {
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">header</div>
+        <div class="item2">main</div>
+        <div class="item3">sideber</div>
+        <div class="item4">footer</div>
+    </div>
+</body>
+</html>
